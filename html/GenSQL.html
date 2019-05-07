@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <form>
+        <table align="left">
+            <tr>
+                <td>
+                    <div align="left"><a href="Login.html"><button type="button"><< Back to Login</button></a></div>
+                </td>
+        </table>
+        <table id="tbl1">
+            <div align="center"><h2>CREATE SQL</h2></div>
+
+            <tr><td><span style="color: red"><i id="err"></i></span></td></tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <label for="table"><b>Table</b></label>
+                        <input type="text" name="tbl" id="txtTable">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <label for="col"><b>Column</b></label>
+                        <input type="text" name="col" id="txtColumn">
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <label for="type"><b>Data Type</b></label>
+                        <input type="text" name="typ" id="txtType">
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <button type="button" onclick="newcol()">+</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table id="tbl2">
+            <tr>
+                <td>
+                    <div class="container">
+                        <label for="sql"><b>SQL</b></label>
+                        <textarea rows="25" cols="150" name="sql" id="txtSQL"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><div align="center"><button type="button" onclick="newtbl(document.getElementById('txtTable').value)">Gen SQL</button></div></td>
+                <td><div align="center"><button type="reset">Cancel</button></div></td>
+            </tr>
+        </table>
+    </form>
+    <script src="../js/GenSQL.js"></script>
+</body>
+</html>

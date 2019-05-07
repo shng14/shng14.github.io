@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <form>
+        <table align="left">
+            <tr>
+                <td>
+                    <div align="left"><a href="AppMain.html"><button type="button"><< Back to Menu</button></a></div>
+                </td>
+        </table>
+        <div align="center"><h1>CALCULATOR</h1></div>
+        <table align="center">
+            <tr><td><span style="color: red"><i id="err"></i></span></td></tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <label for="num1"><b>First number</b></label>
+                        <input type="number" placeholder="Input the first number" name="1num" id="txtFirstNum">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <label for="num2"><b>Second number</b></label>
+                        <input type="number" placeholder="Input the second number" name="2num" id="txtSecNum">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <label for="pheptinh"><b>Calculation</b></label>
+
+                        <select class="dropdown" id="callist">
+                            <option value="cong">Cộng</option>
+                            <option value="tru">Trừ</option>
+                            <option value="nhan">Nhân</option>
+                            <option value="chia">Chia</option>
+                        </select>
+
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <span style="color: green"><b id="kind"></b></span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><div align="center"><button type="button" onclick="cal(document.getElementById('txtFirstNum').value, document.getElementById('txtSecNum').value)">Calculate</button></div></td>
+                <td><div align="center"><button type="reset" onclick="document.getElementById('yBMI').innerHTML = '', document.getElementById('kind').innerHTML = '', document.getElementById('err').innerHTML = ''">Cancel</button></div></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                        <span class="result" style="color: blue"><b id="result"></b></span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script src="../js/App.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
