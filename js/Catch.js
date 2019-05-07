@@ -9,46 +9,63 @@ window.onclick = function (event) {
 }
 
 function demo(usr, pwd) {
-    if (usr == "admin" && pwd == "admin") {
+    if (usr == "admin" && pwd == "admin")
+    {
         return true;
     }
-    else {
-        document.getElementById('warn').innerHTML = "* Username and Password is invalid";
+    else
+    {
+        swal("Username and Password is invalid!", "", "warning");
+        //document.getElementById('warn').innerHTML = "* Username and Password is invalid";
         return false;
     }
 }
 
-function calculate(hei, wei) {
-    if (hei != "" && wei != "") {
+function calculate(hei, wei)
+{
+    if (hei != "" && wei != "")
+    {
+        if (hei > 2) { swal("Chiều cao không được vượt quá 2m", "", "warning"); document.getElementById('txtHeight').focus(); return; }
+        
         var bmi = wei / (hei * hei);
         document.getElementById('yBMI').innerHTML = bmi;
-        if (bmi < 18.5) {
+        if (bmi < 18.5)
+        {
             document.getElementById('kind').innerHTML = "Thiếu cân"
         }
-        else if (bmi >= 18.5 && bmi < 23) {
+        else if (bmi >= 18.5 && bmi < 23)
+        {
             document.getElementById('kind').innerHTML = "Bình thường"
         }
-        else if (bmi >= 23 && bmi < 25) {
+        else if (bmi >= 23 && bmi < 25)
+        {
             document.getElementById('kind').innerHTML = "Thừa cân"
         }
-        else if (bmi >= 25 && bmi < 30) {
+        else if (bmi >= 25 && bmi < 30)
+        {
             document.getElementById('kind').innerHTML = "Béo phì độ I"
         }
-        else if (bmi >= 30 && bmi < 40) {
+        else if (bmi >= 30 && bmi < 40)
+        {
             document.getElementById('kind').innerHTML = "Béo phì độ II"
         }
-        else {
+        else
+        {
             document.getElementById('kind').innerHTML = "Béo phì độ III"
         }
         document.getElementById('err').innerHTML = "";
     }
-    else if (hei != "" && wei == "") {
-        document.getElementById('err').innerHTML = "* Chiều cao không hợp lệ";
-        document.getElementById('txtHeight').focus();
-    }
-    else if (hei == "" && wei != "") {
-        document.getElementById('err').innerHTML = "* Cân nặng không hợp lệ";
+    else if (hei != "" && wei == "")
+    {
+        swal("Cân nặng không hợp lệ!", "", "warning");
+        //document.getElementById('err').innerHTML = "* Chiều cao không hợp lệ";
         document.getElementById('txtWeight').focus();
     }
-    else document.getElementById('err').innerHTML = "* Chiều cao và Cân nặng không hợp lệ";
+    else if (hei == "" && wei != "")
+    {
+        swal("Chiều cao không hợp lệ!", "", "warning");
+        //document.getElementById('err').innerHTML = "* Cân nặng không hợp lệ";
+        document.getElementById('txtHeight').focus();
+    }
+    else swal("Chiều cao và Cân nặng không hợp lệ!", "", "warning");//document.getElementById('err').innerHTML = "* Chiều cao và Cân nặng không hợp lệ";
 }

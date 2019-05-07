@@ -77,17 +77,10 @@ function ketqua() {
         //res3 = true;
         point += 40;
     }
-    document.getElementById("point").innerHTML = point;
+    swal(point.toString(), "Good job!", "success");
+    //document.getElementById("point").innerHTML = point;
 }
-function demo()
-{
-    var checkbox = document.getElementsByName("s2");
-    for (var i = 0; i < checkbox.length; i++){
-        if (checkbox[i].checked === true){
-            alert(checkbox[i].value);
-        }
-    }
-}
+
 function mensaje() {
 
     swal({
