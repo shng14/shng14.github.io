@@ -20,7 +20,7 @@ function demo(usr, pwd) {
 
 function calculate(hei, wei) {
     if (hei != "" && wei != "") {
-        var bmi = hei / (wei * wei);
+        var bmi = wei / (hei * hei);
         document.getElementById('yBMI').innerHTML = bmi;
         if (bmi < 18.5) {
             document.getElementById('kind').innerHTML = "Thiếu cân"
@@ -44,11 +44,11 @@ function calculate(hei, wei) {
     }
     else if (hei != "" && wei == "") {
         document.getElementById('err').innerHTML = "* Chiều cao không hợp lệ";
-        document.getElementById('txtWeight').focus();
+        document.getElementById('txtHeight').focus();
     }
     else if (hei == "" && wei != "") {
         document.getElementById('err').innerHTML = "* Cân nặng không hợp lệ";
-        document.getElementById('txtHeight').focus();
+        document.getElementById('txtWeight').focus();
     }
     else document.getElementById('err').innerHTML = "* Chiều cao và Cân nặng không hợp lệ";
 }
