@@ -12,54 +12,58 @@
                     <div align="left"><a href="AppMain.html"><button type="button"><< Back to Menu</button></a></div>
                 </td>
         </table>
-        <div align="center"><h2>BMI CALCULATION</h2></div>
+        <div align="center"><h2>EXAMINATION</h2></div>
         <table align="center">
-            <tr><td><span style="color: red"><i id="err"></i></span></td></tr>
             <tr>
                 <td>
                     <div class="container">
-                        <label for="height"><b>Height</b></label>
-                        <input type="number" name="hei" id="txtHeight">
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <label><b>kg</b></label>
+                        <label for="one"><b>1. Result 10 + 5 ? (20)</b></label>
+                    </br>
+                    </br>
+                        <input type="radio" name="s1" value="15">15</input>
+                    </br>
+                    </br>
+                        <input type="radio" name="s1" value="1.5">1.5</input>
+                    </br>
+                    </br>
+                        <input type="radio" name="s1" value="12">12</input>
+                    </br>
+                    </br>
+                    <label for="two"><b>2. Result 120 / 5 ? (40)</b></label>
+                    </br>
+                    </br>
+                        <input type="radio" name="s2" value="42">42</input>
+                    </br>
+                    </br>
+                        <input type="radio" name="s2" value="14">14</input>
+                    </br>
+                    </br>
+                        <input type="radio" name="s2" value="24">24</input>
+                    </br>
+                    </br>
+                    <label for="three"><b>3. Result 160 * 15 ? (40)</b></label>
+                    </br>
+                    </br>
+                        <input type="radio" name="s3" value="2040">2040</input>
+                    </br>
+                    </br>
+                        <input type="radio" name="s3" value="2400">2400</input>
+                    </br>
+                    </br>
+                        <input type="radio" name="s3" value="2004">2004</input>
                     </div>
                 </td>
             </tr>
             <tr>
+                <td><div align="center"><button type="button" onclick="ketqua()">Submit</button></div></td>
                 <td>
                     <div class="container">
-                        <label for="weight"><b>Weight</b></label>
-                        <input type="number" name="wei" id="txtWeight">
+                        <span class="result" style="color: blue"><b id="point"></b></span>
                     </div>
                 </td>
-                <td>
-                    <div class="container">
-                        <label><b>meter</b></label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="container">
-                        <label for="bmi"><b>Your BMI:</b></label>
-                        <span style="color: blue"><b id="yBMI"></b></span>
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <span style="color: green"><b id="kind"></b></span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><div align="center"><button type="button" onclick="calculate(document.getElementById('txtHeight').value, document.getElementById('txtWeight').value)">Calculate</button></div></td>
-                <td><div align="center"><button type="reset" onclick="document.getElementById('yBMI').innerHTML = '', document.getElementById('kind').innerHTML = '', document.getElementById('err').innerHTML = ''">Cancel</button></div></td>
             </tr>
         </table>
     </form>
-    <script src="../shng14.github.io/js/Catch.js"></script>
+    <script src="../shng14.github.io/js/App.js"></script>
 </body>
 </html>
