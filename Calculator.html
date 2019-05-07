@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/newstyle.css">
+    <link rel="stylesheet" href="../shng14.github.io/css/newstyle.css">
 </head>
 <body>
     <form>
@@ -14,8 +14,6 @@
         </table>
         <div align="center"><h1>CALCULATOR</h1></div>
         <table align="center">
-            <tr><td><span style="color: red"><i id="err"></i></span></td></tr>
-            <tr>
                 <td>
                     <div class="container">
                         <label for="num1"><b>First number</b></label>
@@ -53,7 +51,7 @@
             </tr>
             <tr>
                 <td><div align="center"><button type="button" onclick="cal(document.getElementById('txtFirstNum').value, document.getElementById('txtSecNum').value)">Calculate</button></div></td>
-                <td><div align="center"><button type="reset" onclick="document.getElementById('yBMI').innerHTML = '', document.getElementById('kind').innerHTML = '', document.getElementById('err').innerHTML = ''">Cancel</button></div></td>
+                <td><div align="center"><button type="reset" onclick="document.getElementById('result').innerHTML = ''">Cancel</button></div></td>
             </tr>
             <tr>
                 <td>
@@ -64,7 +62,7 @@
             </tr>
         </table>
     </form>
-    <script src="../js/App.js"></script>
+    <script src="../shng14.github.io/js/App.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

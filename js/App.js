@@ -10,10 +10,15 @@
         res = num1 * num2;
     }
     else if (document.getElementById("callist").value == "chia") {
-        if (num2 != 0) {
+        if (num2 != 0)
+        {
             res = num1 / num2;
         }
-        else document.getElementById("err").innerHTML = "The Second number is invalid";
+        else
+        {
+            swal("The Second number cannot be 0!");
+            return;
+        }
     }
     document.getElementById("result").innerHTML = res;
 }
