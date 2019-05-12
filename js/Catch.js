@@ -9,20 +9,30 @@ window.onclick = function (event) {
 }
 
 function demo(usr, pwd) {
-    var data = '[ { "user": "admin", "pwd": "admin" }, { "user": "nhi", "pwd": "nhi" }, { "user": "user1", "pwd": "1111" } ]';
-    data = JSON.parse(data);
-    //console.log(data);
-    for (var i = 0; i < data.length; i++) {
-        //console.log(data[i].user);
-        //alert("hello");
-        if (usr == data[i].user && pwd == data[i].pwd) {
-            //console.log(data[i].user);
-            return true;
+    //var data = '[ { "user": "admin", "pwd": "admin" }, { "user": "nhi", "pwd": "nhi" }, { "user": "user1", "pwd": "1111" } ]';
+    let success = false;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('GET', '/json/data.json', false);
+    xmlhttp.onload = function () {
+        var data = JSON.parse(this.response);
+        //console.log(data);
+        let check = data.find(x => x.user == usr && x.pwd == pwd);
+
+        if (check == null) {
+            swal("Username and password is invalid!", "", "warning");
         }
+        else success = true;
+        
+        //console.log(success);
     }
-    swal("Username and Password is invalid!", "", "warning");
-    //document.getElementById('warn').innerHTML = "* Username and Password is invalid";
-    return false;
+    
+    xmlhttp.send();
+    //await sleep(1000);
+    //console.log(success);
+    return success;
+    
+    //document.getelementbyid('warn').innerhtml = "Username and password is invalid";
+    //return false;
 }
 
 function calculate(hei, wei) {
