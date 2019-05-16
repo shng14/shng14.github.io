@@ -9,30 +9,32 @@ window.onclick = function (event) {
 }
 
 function demo(usr, pwd) {
-    //var data = '[ { "user": "admin", "pwd": "admin" }, { "user": "nhi", "pwd": "nhi" }, { "user": "user1", "pwd": "1111" } ]';
-    let success = false;
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET', '/json/data.json', false);
-    xmlhttp.onload = function () {
-        var data = JSON.parse(this.response);
-        //console.log(data);
-        let check = data.find(x => x.user == usr && x.pwd == pwd);
 
-        if (check == null) {
-            swal("Username and password is invalid!", "", "warning");
-        }
-        else success = true;
-        
-        //console.log(success);
+    let success = false;
+    let data;
+    data = getJSON('/json/data.json', false)
+
+    let check = data.find(x => x.user == usr && x.pwd == pwd);
+
+    if (check == null) {
+        swal("Username and password is invalid!", "", "warning");
     }
-    
-    xmlhttp.send();
-    //await sleep(1000);
-    //console.log(success);
+    else success = true;
+
+    //xmlhttp.send();
     return success;
+}
+
+function getJSON(jsonFile, run) {
+    let jsonData;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open('GET', jsonFile, run);
     
-    //document.getelementbyid('warn').innerhtml = "Username and password is invalid";
-    //return false;
+    xmlhttp.onload = function () {
+        jsonData = JSON.parse(this.response);
+    };
+    xmlhttp.send();
+    return jsonData;
 }
 
 function calculate(hei, wei) {
