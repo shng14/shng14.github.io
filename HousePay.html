@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/newstyle.css">
+</head>
+<body>
+    <form>
+        <table align="left">
+            <tr>
+                <td>
+                    <div align="left"><a href="AppMain.html"><button type="button"><< Back to Menu</button></a></div>
+                </td>
+        </table>
+        <div align="center"><h1>HOUSE PAYMENT</h1></div>
+        <table align="center">
+            <tr>
+                <td>
+                    <div class="container">
+                        <label for="total"><b>Cash</b></label>
+                        <input type="number" placeholder="Input your cash" name="cash" id="total" step="100">
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                        <label for="mem"><b>Members</b></label>
+                        <input type="number" placeholder="Input the number of member" name="hmem" id="mem" onchange="newcol(document.getElementById('mem').value)">
+                    </div>
+                </td>
+            </tr>
+            <tr id="tbl1">
+
+            </tr>
+        </table>
+    </form>
+    <script src="js/Pay.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
