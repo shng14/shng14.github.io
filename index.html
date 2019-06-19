@@ -7,21 +7,21 @@
 <body>
     <div align="center"><h2>Login</h2></div>
     <form action="AppMain.html">
-        
+
         <table align="center">
             <tr><td><span style="color: red"><i id="warn"></i></span></td></tr>
             <tr>
+                <td><input type="image" src="img/user.png" height="42" width="42" /></td>
                 <td>
                     <div class="container">
-                        <label for="txtUser"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="usrname" id="txtUser">
+                        <input type="text" placeholder="Enter Username" name="usrname" id="txtUser" />
                     </div>
                 </td>
             </tr>
             <tr>
+                <td><img src="img/password.png" alt="Pass" height="42" width="42"></img></td>
                 <td>
                     <div class="container">
-                        <label for="txtPwd"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" id="txtPwd">
                     </div>
                 </td>
@@ -32,47 +32,67 @@
                 </td>
             </tr>
             <tr>
+                <td></td>
                 <td><div align="center"><button type="button" onclick="demo(document.getElementById('txtUser').value, document.getElementById('txtPwd').value) ? submit() : ''" name="btnLogin">Login</button></div></td>
                 <td><div align="center"><button type="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign up</button></div></td>
                 <td><div align="center"><button type="reset">Cancel</button></div></td>
             </tr>
         </table>
-        
-        <br />
     </form>
     <div id="id01" class="modal">
-
-        <form class="modal-content animate" action="/action_page.php">
+        <form class="modal-content animate">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
             </div>
-
             <div class="container">
-                <label for="fname"><b>Fullname</b></label>
-                <input type="text" placeholder="Enter Your Fullname" name="fname" required>
-
-                <label for="dob"><b>Day of Birth</b></label>
-                <input type="date" name="dob" required>
-
-                <label for="mail"><b>Email</b></label>
-                <input type="email" placeholder="Enter Your Email Address" name="mail" required>
-
-                <label for="phone"><b>Phone</b></label>
-                <input type="text" placeholder="Enter Your Phone Number" name="phone" required>
-
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <label for="cpsw"><b>Confirm Password</b></label>
-                <input type="password" placeholder="Confirm Password" name="cpsw" required>
-
+                </br>
+                <table>
+                    <tr>
+                        <td><img src="img/user.png" alt="User" height="42" width="42"></img></td>
+                        <td>
+                            <div class="container">
+                                <input type="text" placeholder="Enter Username" name="uname" required>
+                            </div>
+                        </td>
+                        <td><img src="img/birthday.png" alt="DOB" height="42" width="42"></img></td>
+                        <td>
+                            <div class="container">
+                                <input type="date" placeholder="Date Of Birth" name="dob" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/email.png" alt="Mail" height="42" width="42"></img></td>
+                        <td>
+                            <div class="container">
+                                <input type="email" placeholder="Enter Your Email Address" name="mail" required>
+                            </div>
+                        </td>
+                        <td><img src="img/phone.png" alt="Phone" height="42" width="42"></img></td>
+                        <td>
+                            <div class="container">
+                                <input type="text" placeholder="Enter Your Phone Number" name="phone" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/password.png" alt="Pass" height="42" width="42"></img></td>
+                        <td>
+                            <div class="container">
+                                <input type="password" placeholder="Enter Password" name="psw" required>
+                            </div>
+                        </td>
+                        <td><img src="img/confirmpass.png" alt="ConfirmPass" height="42" width="42"></img></td>
+                        <td>
+                            <div class="container">
+                                <input type="password" placeholder="Confirm Password" name="cpsw" required>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
                 <button type="submit" class="signupbtn">Sign Up</button>
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
-
             <div class="container"></div>
             <div class="container"></div>
         </form>

@@ -17,4 +17,3 @@
         document.getElementById('tbl1').innerHTML += "<td><div class ='container'><label for='col'><b>Person " + (i + 1) + "</b></label><input type='text' name='pers' id='person'" + (i + 1) + "'></div></td><td><div class ='container'><label for='col'><b>Payed</b></label><input type='number' name='pay' id='payed'" + (i + 1) + "'></div></td><td><div class ='container'><input type='checkbox' name='pay' id='pay'" + (i + 1) + "'></div></td>";
     }
 }
-
