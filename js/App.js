@@ -1,34 +1,26 @@
 ﻿function cal(num1, num2) {
     var res;
-    if (num1 != "" && num2 != "")
-    {
-        if (document.getElementById("callist").value == "cong")
-        {
+    if (num1 != "" && num2 != "") {
+        if (document.getElementById("callist").value == "cong") {
             res = parseInt(num1) + parseInt(num2);
         }
-        else if (document.getElementById("callist").value == "tru")
-        {
+        else if (document.getElementById("callist").value == "tru") {
             res = num1 - num2;
         }
-        else if (document.getElementById("callist").value == "nhan")
-        {
+        else if (document.getElementById("callist").value == "nhan") {
             res = num1 * num2;
         }
-        else if (document.getElementById("callist").value == "chia")
-        {
-            if (num2 != 0)
-            {
+        else if (document.getElementById("callist").value == "chia") {
+            if (num2 != 0) {
                 res = num1 / num2;
             }
-            else
-            {
+            else {
                 swal("The Second number cannot be 0!", "", "warning");
                 return;
             }
         }
     }
-    else
-    {
+    else {
         swal("The numbers is invalid!", "", "warning");
         return;
     }
@@ -46,34 +38,27 @@ function ketqua() {
     var cau1 = document.getElementsByName("s1");
     var cau2 = document.getElementsByName("s2");
     var cau3 = document.getElementsByName("s3");
-    for (var i = 0; i < cau1.length; i++)
-    {
-        if (cau1[i].checked == true)
-        {
+    for (var i = 0; i < cau1.length; i++) {
+        if (cau1[i].checked == true) {
             s_one = cau1[i].value;
         }
-        if (cau2[i].checked == true)
-        {
+        if (cau2[i].checked == true) {
             s_two = cau2[i].value;
         }
-        if (cau3[i].checked == true)
-        {
+        if (cau3[i].checked == true) {
             s_three = cau3[i].value;
         }
     }
 
-    if (s_one == 15)
-    {
+    if (s_one == 15) {
         //res1 = true;
         point += 20;
     }
-    if (s_two == 24)
-    {
+    if (s_two == 24) {
         //res2 = true;
         point += 40;
     }
-    if (s_three == 2400)
-    {
+    if (s_three == 2400) {
         //res3 = true;
         point += 40;
     }
@@ -100,13 +85,13 @@ function mensaje2() {
         buttons: true,
         dangerMode: true,
     })
-.then((willDelete) => {
-    if (willDelete) {
-        swal("Poof! Your imaginary file has been deleted!", {
-            icon: "success",
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                });
+            } else {
+                swal("Your imaginary file is safe!");
+            }
         });
-    } else {
-        swal("Your imaginary file is safe!");
-    }
-});
 }

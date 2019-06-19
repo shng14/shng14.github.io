@@ -29,7 +29,7 @@ function getJSON(jsonFile, run) {
     let jsonData;
     xmlhttp = new XMLHttpRequest();
     xmlhttp.open('GET', jsonFile, run);
-    
+
     xmlhttp.onload = function () {
         jsonData = JSON.parse(this.response);
     };

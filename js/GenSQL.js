@@ -2,8 +2,8 @@
 function newtbl(tbl) {
     //id = id + 1;
     var a = "-- Table: " + tbl + "\n" +
-            "-- DROP TABLE " + tbl + ";" + "\n" +
-            "CREATE TABLE " + tbl + "\n";
+        "-- DROP TABLE " + tbl + ";" + "\n" +
+        "CREATE TABLE " + tbl + "\n";
     var b;
     for (var i = 0; i > id; i++) {
         if (i == 0) {

@@ -1,20 +1,16 @@
 ﻿function cal(num1, num2) {
     var rem, px;
-    if (num1 != "" && num2 != "")
-    {
-        if (num1 != 0)
-        {
+    if (num1 != "" && num2 != "") {
+        if (num1 != 0) {
             rem = num2 / num1;
             px = num2 * 8 / 6;
         }
-        else
-        {
+        else {
             swal("The number cannot be 0!", "", "warning");
             return;
         }
     }
-    else
-    {
+    else {
         swal("The numbers is invalid!", "", "warning");
         return;
     }
@@ -41,13 +37,13 @@ function mensaje2() {
         buttons: true,
         dangerMode: true,
     })
-.then((willDelete) => {
-    if (willDelete) {
-        swal("Poof! Your imaginary file has been deleted!", {
-            icon: "success",
+        .then((willDelete) => {
+            if (willDelete) {
+                swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                });
+            } else {
+                swal("Your imaginary file is safe!");
+            }
         });
-    } else {
-        swal("Your imaginary file is safe!");
-    }
-});
 }
