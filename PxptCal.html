@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/newstyle.css">
+</head>
+<body>
+    <form>
+        <table align="left">
+            <tr>
+                <td>
+                    <div align="left"><a href="AppMain.html"><button type="button"><< Back to Menu</button></a></div>
+                </td>
+        </table>
+        <div align="center"><h1>CALCULATOR</h1></div>
+        <table align="center">
+            <tr>
+                <td>
+                    <label for="txtRem"><b>1  rem   =</b></label>
+                </td>
+                <td>
+                    <input type="number" name="pt" id="txtPt">
+                </td>
+                <td>
+                    </label><label><b>pt</b></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    </label><label><b>Pt</b></label>
+                </td>
+                <td>
+                    <input type="number" name="pt" id="txtPt1">
+                </td>
+                <td>
+                    <label><b>pt</b></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    </label><label><b>Result</b></label>
+                </td>
+                <td>
+                   <span class="result" style="color: blue"><b id="result_rem"></b></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="result" style="color: blue"><b id="result_px"></b></span>
+                </td>
+            </tr>
+            <tr>
+                <td><div align="center"><button type="button" onclick="cal(document.getElementById('txtPt').value, document.getElementById('txtPt1').value)">Calculate</button></div></td>
+                <td><div align="center"><button type="reset" onclick="document.getElementById('result_rem').innerHTML = ''">Cancel</button></div></td>
+            </tr>
+        </table>
+    </form>
+    <script src="js/PxptCal.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
