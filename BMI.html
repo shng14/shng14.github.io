@@ -7,57 +7,62 @@
 <body>
     <form>
         <table align="left">
-            <tr>
-                <td>
-                    <div align="left"><a href="AppMain.html?usrname=admin&psw=admin&remember=on"><button type="button"><< Back to Menu</button></a></div>
-                </td>
+            <tbody>
+                <tr>
+                    <td>
+                        <div align="left"><a href="AppMain.html?usrname=admin&psw=admin&remember=on"><button type="button">&lt;&lt; Back to Menu</button></a></div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
         <div align="center"><h1>BMI CALCULATION</h1></div>
         <table align="center">
-            <tr><td><span style="color: red"><i id="err"></i></span></td></tr>
-            <tr>
-                <td>
-                    <div class="container">
-                        <label for="txtWeight"><b>Weight</b></label>
-                        <input type="number" name="wei" id="txtWeight">
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <label><b>kg</b></label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="container">
-                        <label for="txtHeight"><b>Height</b></label>
-                        <input type="number" name="hei" id="txtHeight">
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <label><b>meter</b></label>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="container">
-                        <label for="bmi"><b>Your BMI:</b></label>
-                        <span style="color: blue"><b id="yBMI"></b></span>
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <span style="color: green"><b id="kind"></b></span>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td><div align="center"><button type="button" onclick="calculate(document.getElementById('txtHeight').value, document.getElementById('txtWeight').value)">Calculate</button></div></td>
-                <td><div align="center"><button type="reset" onclick="document.getElementById('yBMI').innerHTML = '', document.getElementById('kind').innerHTML = '', document.getElementById('err').innerHTML = ''">Cancel</button></div></td>
-            </tr>
+            <tbody>
+                <tr><td><span style="color: red"><i id="err" /></span></td></tr>
+                <tr>
+                    <td>
+                        <div className="container">
+                            <label htmlFor="txtWeight"><b>Weight</b></label>
+                            <input type="number" name="wei" id="txtWeight" />
+                        </div>
+                    </td>
+                    <td>
+                        <div className="container">
+                            <label><b>kg</b></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div className="container">
+                            <label htmlFor="txtHeight"><b>Height</b></label>
+                            <input type="number" name="hei" id="txtHeight" />
+                        </div>
+                    </td>
+                    <td>
+                        <div className="container">
+                            <label><b>meter</b></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div className="container">
+                            <label htmlFor="bmi"><b>Your BMI:</b></label>
+                            <span style="color: blue"><b id="yBMI" /></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div className="container">
+                            <span style="color: green"><b id="kind" /></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><div align="center"><button type="button" onclick="calculate(document.getElementById('txtHeight').value, document.getElementById('txtWeight').value)">Calculate</button></div></td>
+                    <td><div align="center"><button type="reset" onclick="document.getElementById('yBMI').innerHTML = '', document.getElementById('kind').innerHTML = '', document.getElementById('err').innerHTML = ''">Cancel</button></div></td>
+                </tr>
+            </tbody>
         </table>
     </form>
     <script src="js/Catch.js"></script>
