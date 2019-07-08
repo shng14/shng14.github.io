@@ -1,4 +1,5 @@
 function Square(props) {
+    console.log(props);
     return (
         React.createElement("button", { className: "square", onClick: props.onClick },
             props.value));
@@ -63,8 +64,6 @@ class Board extends React.Component {
                     this.renderSquare(35))));
     }
 }
-
-
 class Game extends React.Component {
     constructor(props) {
         super(props);
@@ -142,51 +141,86 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(React.createElement(Game, null), document.getElementById("root"));
+function getTH(col, bn) {
+    let itemArr = new Array(5);
+    let lines_2 = [];
+    let x = [];
+    let y = 0;
+    for (let j = 0; j < col; j++) {
+        for (let k = 0; k < 2; k++) {
+            let y2 = y;
+            for (let i = 0; i < col - 1; i++) {
+                itemArr[i] = y2;
+                x[i] = itemArr[i];
+                y2 = y2 + bn;
+            }
+            y = y + bn;
+            lines_2.push(x);
+            x = new Array();
+        }
+        console.log(y);
+        y = y + 4;
+    }
+    return lines_2;
+}
 function calculateWinner(squares) {
+
+    console.log(getTH(6, 1));
+    console.log(getTH(6, 6));
+
     const lines = [
         [0, 1, 2, 3, 4],
         [6, 7, 8, 9, 10],
         [12, 13, 14, 15, 16],
         [18, 19, 20, 21, 22],
         [24, 25, 26, 27, 28],
+
         [1, 2, 3, 4, 5],
         [7, 8, 9, 10, 11],
         [13, 14, 15, 16, 17],
         [19, 20, 21, 22, 23],
         [25, 26, 27, 28, 29],
+
         [6, 7, 8, 9, 10],
         [12, 13, 14, 15, 16],
         [18, 19, 20, 21, 22],
         [24, 25, 26, 27, 28],
         [30, 31, 32, 33, 34],
+
         [7, 8, 9, 10, 11],
         [13, 14, 15, 16, 17],
         [19, 20, 21, 22, 23],
         [25, 26, 27, 28, 29],
         [31, 32, 33, 34, 35],
+
         [0, 7, 14, 21, 28],
         [6, 13, 20, 27, 34],
         [4, 9, 14, 19, 24],
         [10, 15, 20, 25, 30],
+
         [1, 8, 15, 22, 29],
         [7, 14, 21, 28, 35],
         [5, 10, 15, 20, 25],
         [11, 16, 21, 26, 31],
+
         [0, 6, 12, 18, 24],
         [1, 7, 13, 19, 25],
         [2, 8, 14, 20, 26],
         [3, 9, 15, 21, 27],
         [4, 10, 16, 22, 28],
+
         [1, 7, 13, 19, 25],
         [2, 8, 14, 20, 26],
         [3, 9, 15, 21, 27],
         [4, 10, 16, 22, 28],
         [5, 11, 17, 23, 29],
+
         [6, 12, 18, 24, 30],
         [7, 13, 19, 25, 31],
         [8, 14, 20, 26, 32],
         [9, 15, 21, 27, 33],
         [10, 16, 22, 28, 34],
+
         [7, 13, 19, 25, 31],
         [8, 14, 20, 26, 32],
         [9, 15, 21, 27, 33],
