@@ -6,64 +6,99 @@
 </head>
 <body>
     <form>
-        <table align="left">
-            <tbody>
-                <tr>
-                    <td>
-                        <div align="left"><a href="AppMain.html?usrname=admin&psw=admin&remember=on"><button type="button">&lt;&lt; Back to Menu</button></a></div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <div align="center"><h1>BMI CALCULATION</h1></div>
-        <table align="center">
-            <tbody>
-                <tr><td><span style="color: red"><i id="err" /></span></td></tr>
-                <tr>
-                    <td>
-                        <div className="container">
-                            <label htmlFor="txtWeight"><b>Weight</b></label>
-                            <input type="number" name="wei" id="txtWeight" />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="container">
-                            <label><b>kg</b></label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div className="container">
-                            <label htmlFor="txtHeight"><b>Height</b></label>
-                            <input type="number" name="hei" id="txtHeight" />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="container">
-                            <label><b>meter</b></label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div className="container">
-                            <label htmlFor="bmi"><b>Your BMI:</b></label>
-                            <span style="color: blue"><b id="yBMI" /></span>
-                        </div>
-                    </td>
-                    <td>
-                        <div className="container">
-                            <span style="color: green"><b id="kind" /></span>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><div align="center"><button type="button" onclick="calculate(document.getElementById('txtHeight').value, document.getElementById('txtWeight').value)">Calculate</button></div></td>
-                    <td><div align="center"><button type="reset" onclick="document.getElementById('yBMI').innerHTML = '', document.getElementById('kind').innerHTML = '', document.getElementById('err').innerHTML = ''">Cancel</button></div></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="container">
+      <h2><label for="reason" class="form-label pt-3 ps-3"><b style="color:blue;">THÔNG TIN</b></h2>
+      <form class="form-floating pt-1 ps-1">
+        <input type="text" class="form-control" id="order" placeholder="a" onclick="select()" required>
+        <div class="invalid-feedback">
+          Vui lòng nhập Mã đơn hàng
+        </div>
+        <label for="order"><b>MÃ ĐƠN HÀNG <i style="color:red;">(*)</i></b></label>
+      </form>    
+
+      <form class="form-floating pt-1 ps-1">
+
+        <input type= "text" class="form-control mt-1" id="fromWh" list="fromWhList" placeholder="Chọn kho ban đầu..." onclick="select()" required>
+        <datalist id="fromWhList">
+        </datalist>     
+        
+        <div class="invalid-feedback">
+          Vui lòng chọn "Kho ban đầu" trong danh sách
+        </div>
+        <label for="fromWh"><b>KHO BAN ĐẦU <i style="color:red;">(*)</i></b></label>
+
+      </form>
+      
+      
+      <form class="form-floating pt-1 ps-1">
+        
+        <input type= "text" class="form-control mt-1" id="toWh" list="toWhList" placeholder="Chọn kho ban đầu..." onclick="select()" required>
+        <datalist id="toWhList">
+        </datalist>     
+        
+        <div class="invalid-feedback">
+          Vui lòng chọn "Kho chuyển đến" trong danh sách
+        </div>
+        <label for="toWh"><b>KHO CHUYỂN ĐẾN <i style="color:red;">(*)</i></b></label>
+
+      </form>
+      
+      <div class="reason">
+        <h2><label for="reason" class="form-label pt-3 ps-3"><b style="color:blue;">LÝ DO CHUYỂN KHO</b>
+        </label></h2>
+        
+        <div>
+          <div class="form-check pt-1 ps-5">
+            <input class="form-check-input" type="checkbox" value="" id="isShort" onclick="addShortEl()">
+            <label class="form-check-label" for="isShort">
+              Thiếu hàng
+            </label>
+          </div>
+
+          <div id="shortItems"></div>
+          <div id="addShortItemButton" onclick="addShortInput()"></div>
+
+
+          <div class="form-floating mt-1 ps-1">
+            <textarea class="form-control" placeholder="a" id="reason" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Lý do khác</label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="form-floating pt-1 ps-1">
+        <textarea class="form-control" placeholder="a" id="note" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Ghi chú</label>
+      </div>
+
+      <div class="mx-auto pt-1" style="width: 200px;">
+        <button class="btn btn-primary" type="submit" id="sendCKVL" onclick="this.disabled=true;this.innerText='Đang gửi yêu cầu...'; sendCKVL_Click()">Gửi yêu cầu chuyển kho</button>
+      </div>
+
+    </div>
+
+
+    <template id="temp_addShortItem">
+
+      <div class="d-grid gap-2 col-6 mx-auto mt-1">
+        <button class="btn btn-primary" type="button">Thêm sp thiếu</button>
+      </div>
+
+    </template>
+
+    <template id="temp_shortItem">
+
+      <div class="input-group mt-1 shortItemInput">
+        <input type="text" class="form-control shortItemValue" placeholder="Sản phẩm thiếu">
+        
+        <span class="input-group-text" id="basic-addon2">
+          <button type="button" class="btn-close" aria-label="Close"></button>
+        </span>
+
+      </div>
+    
+    </template>
     </form>
     <script src="js/Catch.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
